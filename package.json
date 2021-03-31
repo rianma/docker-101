@@ -1,10 +1,14 @@
 {
   "name": "docker-101",
   "version": "1.0.0",
-  "description": "",
+  "description": "Docker 101 - First Lesson For JavaScript Developers",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rianma/docker-101"
   },
   "keywords": [],
   "author": "",
