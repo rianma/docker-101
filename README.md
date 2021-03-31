@@ -15,15 +15,13 @@ A volumn is a dedicated folder on the host machine, inside the folder, a contain
 * Create a volumn using `docker volumn create shared-stuff` to create a new volumn
 * Add `--mount source=shared-stuff,target=/stuff` to `docker run` command to mount the *source* volumn to the *target* in the running container
 
-## Exercise 2 - Use nginx as reverse proxy for the Node.js app
+## Exercise 3 - Use docker-compose to manage multile services
 
 > Tip: 1 PROCESS PER CONTAINER
 
 To keep your container healthy, write simple, maintainable microservices.
 
-Use docker-compose to manage multile services.
-
-## Exercise 3 - Use nginx for multiple Node.js apps
+## Exercise 4 - Use nginx for multiple Node.js apps
 
 
 ## Resources
