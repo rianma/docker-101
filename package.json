@@ -7,7 +7,7 @@
     "start": "node main.js",
     "start:debug": "node --inspect=0.0.0.0:16000 main.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-		"lint": "eslint main.js app/"
+    "lint": "eslint main.js app/"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,12 @@
     "koa-bodyparser": "^4.3.0",
     "koa-morgan": "^1.0.1",
     "koa-mount": "^4.0.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "node-fetch": "^2.6.1",
+    "zipkin": "^0.22.0",
+    "zipkin-context-cls": "^0.22.0",
+    "zipkin-instrumentation-fetch": "^0.22.0",
+    "zipkin-transport-http": "^0.22.0"
   },
   "devDependencies": {
     "@types/koa": "^2.13.3",
