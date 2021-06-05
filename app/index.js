@@ -25,26 +25,23 @@ app.use(async (ctx, next) => {
   console.log('#4 leave-pre-middleware')
 })
 
-/**
- * @param {import('koa').Context} ctx
- */
-router.get('/status/403', (ctx) => {
-  ctx.status = 403
-  ctx.body = 'Operation Is Not Allowed'
-})
+/**@param {import('koa').Context} ctx */
+const forbiddenHandler = (ctx) => {
+	ctx.status = 403
+	ctx.body = 'Operation Is Not Allowed'
+}
+router.get('/status/403', forbiddenHandler)
 
-/**
- * @param {import('koa').Context} ctx
- * @param {import('koa').Next} next
- */
-router.get('/echo', (ctx) => {
-  ctx.body = JSON.stringify({
-    headers: ctx.req.headers,
-    originalUrl: ctx.originalUrl,
-    query: ctx.query,
-    method: ctx.req.method
-  })
-})
+/**@param {import('koa').Context} ctx */
+const echoHander = (ctx) => {
+	ctx.body = JSON.stringify({
+		headers: ctx.req.headers,
+		originalUrl: ctx.originalUrl,
+		query: ctx.query,
+		method: ctx.req.method
+	})
+}
+router.get('/echo', echoHander)
 
 app.use(router.routes())
 app.use(router.allowedMethods())
