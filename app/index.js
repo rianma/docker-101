@@ -1,4 +1,5 @@
 const Koa = require('koa')
+const bodyParser = require('koa-bodyparser')
 const Router = require('@koa/router');
 const morgan = require('koa-morgan')
 
@@ -6,6 +7,7 @@ const app = new Koa()
 
 const router = new Router()
 
+app.use(bodyParser())
 app.use(morgan('combined'))
 
 /**
@@ -33,15 +35,17 @@ const forbiddenHandler = (ctx) => {
 router.get('/status/403', forbiddenHandler)
 
 /**@param {import('koa').Context} ctx */
-const echoHander = (ctx) => {
+const echoHandler = (ctx) => {
 	ctx.body = JSON.stringify({
 		headers: ctx.req.headers,
 		originalUrl: ctx.originalUrl,
 		query: ctx.query,
-		method: ctx.req.method
+		method: ctx.req.method,
+		body: ctx.request.body
 	})
 }
-router.get('/echo', echoHander)
+router.get('/echo', echoHandler)
+router.post('/echo', echoHandler)
 
 app.use(router.routes())
 app.use(router.allowedMethods())
