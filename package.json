@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node main.js",
     "start:debug": "node --inspect=0.0.0.0:16000 main.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+		"lint": "eslint main.js app/"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,11 @@
   "devDependencies": {
     "@types/koa": "^2.13.3",
     "@types/koa-router": "^7.4.2",
-    "chokidar": "^3.5.1"
+    "chokidar": "^3.5.1",
+    "eslint": "^7.28.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0"
   }
 }
