@@ -1,7 +1,7 @@
 {
-  "name": "docker-101",
+  "name": "dockerized-koa-demo",
   "version": "1.0.0",
-  "description": "Docker 101 - First Lesson For JavaScript Developers",
+  "description": "Dockerized Koa 101 - First Lesson For JavaScript Developers",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rianma/docker-101"
+    "url": "https://github.com/rianma/dockerized-koa-demo"
   },
   "keywords": [],
   "author": "",

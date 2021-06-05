@@ -1,6 +1,6 @@
-# Docker 101
+# Dockerized Koa Demo
 
-Learn Docker by building simple demo app.
+Learn Docker & Koa by building simple demo app.
 
 ## Exercise 1 - Setup and dockerize a Node.js app
 
