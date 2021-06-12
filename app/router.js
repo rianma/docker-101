@@ -1,5 +1,6 @@
 const Router = require('@koa/router')
-const zipkinRouter = require('./components/zipkin/zipkin-router')
+const httpbinProxy = require('./controllers/httpbin')
+
 const router = new Router()
 
 /** @param {import('koa').Context} ctx */
@@ -22,7 +23,6 @@ const echoHandler = (ctx) => {
 router.get('/echo', echoHandler)
 router.post('/echo', echoHandler)
 
-router.use('/zipkin', zipkinRouter.routes())
-router.use('/zipkin', zipkinRouter.allowedMethods())
+router.use('/httpbin', httpbinProxy.routes(), httpbinProxy.allowedMethods())
 
 module.exports = router

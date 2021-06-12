@@ -29,6 +29,7 @@
     "zipkin": "^0.22.0",
     "zipkin-context-cls": "^0.22.0",
     "zipkin-instrumentation-fetch": "^0.22.0",
+    "zipkin-instrumentation-koa": "^0.22.0",
     "zipkin-transport-http": "^0.22.0"
   },
   "devDependencies": {
