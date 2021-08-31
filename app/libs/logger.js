@@ -4,7 +4,15 @@ log4js.configure({
   appenders: {
     out: {
       type: 'stdout',
-      layout: ''
+      layout: {
+        type: 'colored'
+      }
+    }
+  },
+  categories: {
+    default: {
+      appenders: ['out'],
+      level: 'debug'
     }
   }
 })
