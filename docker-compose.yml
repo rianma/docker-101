@@ -10,3 +10,8 @@ services:
       context: ./nginx
     ports:
       - "8088:80"
+  redis:
+    build:
+      context: ./redis
+    ports:
+      - "6379:6379"
