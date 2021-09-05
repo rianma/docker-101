@@ -30,6 +30,7 @@
     "morgan": "^1.10.0",
     "node-fetch": "^2.6.1",
     "querystring": "^0.2.1",
+    "redis": "^3.1.2",
     "zipkin": "^0.22.0",
     "zipkin-context-cls": "^0.22.0",
     "zipkin-instrumentation-fetch": "^0.22.0",
