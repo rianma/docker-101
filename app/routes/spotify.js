@@ -1,6 +1,6 @@
 const Router = require('@koa/router')
 const querystring = require('querystring')
-const { spotifyApiFetch } = require('../libs/spotify-api')
+const { fetch: spotifyApiFetch } = require('../libs/spotify-api')
 
 const router = new Router()
 

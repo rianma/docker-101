@@ -46,5 +46,5 @@ const spotifyApiFetch = async (relativeUrl, requestConfig = {}) => {
 
 module.exports = {
   getAccessToken,
-  spotifyApiFetch
+  fetch: spotifyApiFetch
 }
