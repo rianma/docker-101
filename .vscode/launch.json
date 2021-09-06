@@ -18,6 +18,17 @@
       "address": "0.0.0.0",
       "port": 16000,
       "protocol": "inspector"
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Attach queue.inspect.js",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "address": "0.0.0.0",
+      "port": 16001,
+      "protocol": "inspector"
     }
   ]
 }

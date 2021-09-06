@@ -3,5 +3,8 @@
 			"source.fixAll.eslint": true
 	},
 	"editor.formatOnSave": false,
-	"debug.javascript.autoAttachFilter": "onlyWithFlag"
+	"debug.javascript.autoAttachFilter": "onlyWithFlag",
+	"files.associations": {
+		".env.*": "dotenv"
+	}
 }
