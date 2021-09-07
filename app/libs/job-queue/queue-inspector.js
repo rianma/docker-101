@@ -43,8 +43,8 @@ const getAllJobs = async () => {
   }
 }
 
-const printJobsToConsole = async () => {
-  const { delayedJobs, activeJobs, failedJobs, completedJobs, waitingJobs } = await getAllJobs()
+const printJobsToConsole = (jobs) => {
+  const { delayedJobs, activeJobs, failedJobs, completedJobs, waitingJobs } = jobs
 
   logger.debug(util.format('[state=delayed] total: %s', delayedJobs.length))
   console.table(delayedJobs.map(formatJob))
@@ -70,7 +70,8 @@ const printJobsToConsole = async () => {
 }
 
 const loop = async () => {
-  await printJobsToConsole()
+  const jobs = await getAllJobs()
+  printJobsToConsole(jobs)
   await sleep(1000)
   process.stdout.write('\033c')
   await loop()

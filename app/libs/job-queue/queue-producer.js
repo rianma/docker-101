@@ -16,16 +16,23 @@ const createCarOrder = () => {
 }
 
 let timer = null
+let num = 0
 
-const startProducer = () => {
+const startProducer = (options) => {
+  const { interval = 100, count = 100 } = options
   if (timer) {
     logger.warn('producer is already running')
     return
   }
   timer = setInterval(() => {
+    if (num >= count) {
+      stopProducer()
+      return
+    }
     const order = createCarOrder()
     carOrderQueue.add(order)
-  })
+    num++
+  }, interval)
 }
 
 const stopProducer = () => {
@@ -34,6 +41,7 @@ const stopProducer = () => {
     return
   }
   clearInterval(timer)
+  num = 0
 }
 
 const addOneJob = async () => {
