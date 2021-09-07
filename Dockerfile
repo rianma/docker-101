@@ -4,12 +4,12 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN rm .env.local
-
 # shell form
 RUN npm install
 
 COPY . .
+
+RUN [ -f .env.local ] && rm .env.local
 
 ENV PORT=6000
 
