@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "node main.js",
-    "start:debug": "node --inspect=0.0.0.0:16000 main.js",
+    "start:debug": "node --inspect=0.0.0.0:16100 main.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint main.js app/"
   },

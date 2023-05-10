@@ -4,7 +4,7 @@ services:
     build:
       context: .
     ports:
-      - "6000:6000"
+      - "6100:6100"
   nginx:
     build:
       context: ./nginx

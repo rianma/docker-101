@@ -9,10 +9,10 @@ RUN npm install
 
 COPY . .
 
-ENV PORT=6000
+ENV PORT=6100
 
-# 6000 for express app, 16000 for 
-EXPOSE 6000 16000
+# 6100 for express app, 16100 for 
+EXPOSE 6100 16100
 
 # exec form - One Dockerfile, One CMD
 CMD [ "npm", "run", "start:debug" ]

@@ -7,7 +7,7 @@ const chokidar = require('chokidar')
 const hotReload = process.env.HOT_RELOAD === 'true'
 
 const startupServer = (server) => {
-	const port = process.env.PORT || 6000
+	const port = process.env.PORT || 6100
 	server.listen(port, () => {
 		console.log('Process pid: ' + process.pid)
 		console.log('App listening on port ' + port)
