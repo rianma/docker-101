@@ -6,6 +6,8 @@ router.all(':rest(.*)', async (ctx) => {
   const { headers, originalUrl, method, body } = ctx.request
   const { rest: relativePath } = ctx.params
 
+  ctx.cookies.set('key1', 'val1', { path: '/echo/' })
+
   ctx.body = JSON.stringify({
     headers,
     originalUrl,
