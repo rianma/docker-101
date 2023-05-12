@@ -22,28 +22,30 @@ const compare = (ifNoneMatch, freshMd5) => {
   return clientMd5 === freshMd5
 }
 
-router.get('/page1', async (ctx) => {
-  const file = path.join(__dirname, './static/page1.html')
+const renderPage = (pageName) => async (ctx) => {
+  const file = path.join(__dirname, `./static/${pageName}.html`)
   const body = await util.promisify(fs.readFile)(file)
   const freshMd5 = crypto.createHash('md5').update(body).digest('hex')
-  const lastModified = new Date('2022-05-12 00:00:00').toUTCString()
+  // const lastModified = new Date('2023-04-12 00:00:00').toUTCString()
 
   const ifNoneMatch = ctx.get('if-none-match')
   const notModified = compare(ifNoneMatch, freshMd5)
   ctx.set('Content-Type', 'text/html')
+  ctx.set('ETag', `W/"${freshMd5}"`)
+  // ctx.set('Last-Modified', lastModified)
 
   if (notModified) {
     ctx.status = 304
     ctx.body = null
-    ctx.set('ETag', ifNoneMatch)
   } else {
     ctx.status = 200
     ctx.body = body
-    ctx.set('ETag', `W/"${freshMd5}"`)
-    ctx.set('Last-Modified', lastModified)
-    // ctx.set('Cache-Control', 'public, max-age=10')
   }
-})
+}
+
+router.get('/page1', renderPage('page1'))
+
+router.get('/page2', renderPage('page2'))
 
 router.get('/errors', async (ctx) => {
   await ctx.throw(403, 'Mock Forbidden Error', { code: 1001, expose: true })
